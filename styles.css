@@ -1,0 +1,169 @@
+:root {
+  color-scheme: light;
+  --bg: #f5efe0;
+  --panel: #fff8ea;
+  --text: #2d2a24;
+  --accent: #b35b2e;
+  --accent-soft: #f0d1b9;
+  --card: #fff;
+  --card-border: #d7c3a9;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, Segoe UI, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #fff7dc, var(--bg));
+  color: var(--text);
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.subtitle {
+  color: #684e3e;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr minmax(220px, 320px);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 2px solid var(--accent-soft);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.controls .grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+label {
+  font-size: 0.9rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+input,
+button,
+select {
+  border-radius: 8px;
+  border: 1px solid #c8ae90;
+  padding: 0.55rem;
+}
+
+button {
+  background: #fff;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+button:hover:not(:disabled) {
+  background: #ffe8d8;
+  border-color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.status {
+  background: #fff;
+  border-left: 4px solid var(--accent);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.board {
+  display: grid;
+  gap: 1rem;
+}
+
+.player-zone {
+  background: #fffdf5;
+  border-radius: 12px;
+  border: 2px solid #e8d3b6;
+  padding: 0.8rem;
+}
+
+.player-zone h2 {
+  margin-top: 0;
+}
+
+.player-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.species-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.7rem;
+}
+
+.species-card {
+  background: var(--card);
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  padding: 0.65rem;
+}
+
+.species-card h3 {
+  margin: 0 0 0.4rem;
+}
+
+.art {
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffe5ac, #f9b473);
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  border: 1px solid #cfa57f;
+}
+
+.trait,
+.food {
+  margin: 0.5rem 0;
+  font-size: 0.92rem;
+}
+
+.legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.icon {
+  width: 1.6rem;
+  display: inline-block;
+}
+
+@media (max-width: 1100px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
