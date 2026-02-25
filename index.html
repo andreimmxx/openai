@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Эволюция — настольная игра Кнорре (веб-версия)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Эволюция</h1>
+      <p class="subtitle">Цифровая настольная версия по мотивам игры Дмитрия Кнорре</p>
+    </header>
+
+    <main>
+      <section class="panel controls">
+        <h2>Управление партией</h2>
+        <div class="grid">
+          <label>
+            Игрок 1
+            <input id="player1" type="text" value="Игрок 1" />
+          </label>
+          <label>
+            Игрок 2
+            <input id="player2" type="text" value="Игрок 2" />
+          </label>
+          <button id="startGame">Начать игру</button>
+          <button id="nextRound" disabled>Новый раунд</button>
+        </div>
+        <p id="status" class="status">Нажмите «Начать игру», чтобы раздать карты.</p>
+      </section>
+
+      <section class="board" id="board"></section>
+
+      <section class="panel legend">
+        <h2>Свойства карт</h2>
+        <ul>
+          <li><span class="icon">🦶</span><strong>Быстрое</strong> — сложнее поймать хищнику.</li>
+          <li><span class="icon">🛡️</span><strong>Защитное</strong> — уменьшает шанс быть съеденным.</li>
+          <li><span class="icon">👥</span><strong>Стадное</strong> — даёт +1 очко в конце раунда.</li>
+          <li><span class="icon">🍖</span><strong>Хищник</strong> — может атаковать чужой вид.</li>
+          <li><span class="icon">🍃</span><strong>Травоядное</strong> — кормится из кормовой базы.</li>
+        </ul>
+      </section>
+    </main>
+
+    <template id="speciesTemplate">
+      <article class="species-card">
+        <h3></h3>
+        <div class="art"></div>
+        <p class="trait"></p>
+        <p class="food"></p>
+        <button class="feedBtn">Покормить</button>
+        <button class="attackBtn">Атаковать</button>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
